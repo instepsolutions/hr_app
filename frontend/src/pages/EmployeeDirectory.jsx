@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import {
   ArrowDown, ArrowUp, ArrowUpDown, BriefcaseBusiness, CalendarDays, Check, ChevronDown,
   CircleUserRound, Ellipsis, Eye, FilterX, Mail, MapPin, Pencil, Plus, Search, ShieldAlert,
@@ -108,6 +108,7 @@ function RowActions({ employee, onView, onEdit, onDeactivate, onReactivate, onDe
 
 export default function EmployeeDirectory({ notify }) {
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
   const [employees, setEmployees] = useState([])
   const [stats, setStats] = useState(null)
   const [lookups, setLookups] = useState({ departments: [], locations: [], designations: [], employmentTypes: [] })
@@ -115,8 +116,8 @@ export default function EmployeeDirectory({ notify }) {
   const [loadError, setLoadError] = useState('')
   const [loading, setLoading] = useState(true)
   const [statsLoading, setStatsLoading] = useState(true)
-  const [filters, setFilters] = useState({ search: '', departmentId: '', locationId: '', employmentTypeId: '', status: '', dateOfJoiningFrom: '', dateOfJoiningTo: '' })
-  const [searchInput, setSearchInput] = useState('')
+  const [filters, setFilters] = useState(() => ({ search: searchParams.get('search') || '', departmentId: '', locationId: '', employmentTypeId: '', status: '', dateOfJoiningFrom: '', dateOfJoiningTo: '' }))
+  const [searchInput, setSearchInput] = useState(() => searchParams.get('search') || '')
   const [page, setPage] = useState(0)
   const [size, setSize] = useState(10)
   const [sort, setSort] = useState({ field: 'employeeCode', direction: 'asc' })
@@ -125,6 +126,13 @@ export default function EmployeeDirectory({ notify }) {
   const [saving, setSaving] = useState(false)
   const [refresh, setRefresh] = useState(0)
   const [modalError, setModalError] = useState('')
+
+  useEffect(() => {
+    const query = searchParams.get('search') || ''
+    setSearchInput(query)
+    setPage(0)
+    setFilters((current) => current.search === query ? current : { ...current, search: query })
+  }, [searchParams])
 
   useEffect(() => {
     const timer = window.setTimeout(() => setFilters((current) => current.search === searchInput.trim() ? current : { ...current, search: searchInput.trim() }), 320)
@@ -193,6 +201,7 @@ export default function EmployeeDirectory({ notify }) {
   }
 
   function clearFilters() {
+    setSearchParams({}, { replace: true })
     setSearchInput('')
     setFilters({ search: '', departmentId: '', locationId: '', employmentTypeId: '', status: '', dateOfJoiningFrom: '', dateOfJoiningTo: '' })
     setPage(0)

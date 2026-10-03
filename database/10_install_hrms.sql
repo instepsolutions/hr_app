@@ -12,5 +12,7 @@ SET DEFINE OFF
 @database/07_seed_lifecycle_data.sql
 @database/08_seed_bulk_action_data.sql
 @database/09_seed_admin.sql
+@database/13_create_dashboard_tables.sql
+@database/14_seed_dashboard_widgets.sql
 
 EXIT SUCCESS

@@ -5,6 +5,7 @@ import { LoadingState, Toast } from './components/ui'
 import { authService } from './services/authService'
 
 const EmployeeDetails = lazy(() => import('./pages/EmployeeDetails'))
+const DashboardPage = lazy(() => import('./pages/DashboardPage'))
 const EmployeeDirectory = lazy(() => import('./pages/EmployeeDirectory'))
 const ManageProfiles = lazy(() => import('./pages/ManageProfiles'))
 const OrganizationalStructure = lazy(() => import('./pages/OrganizationalStructure'))
@@ -13,8 +14,8 @@ const BulkActions = lazy(() => import('./pages/BulkActions'))
 const LoginPage = lazy(() => import('./pages/LoginPage'))
 const PlaceholderPage = lazy(() => import('./pages/PlaceholderPage'))
 
-function ProtectedLayout({ session, onLogout }) {
-  return session ? <AppShell session={session} onLogout={onLogout}><Outlet /></AppShell> : <Navigate to="/login" replace />
+function ProtectedLayout({ session, onLogout, onNotify }) {
+  return session ? <AppShell session={session} onLogout={onLogout} onNotify={onNotify}><Outlet /></AppShell> : <Navigate to="/login" replace />
 }
 
 function AppRoutes() {
@@ -48,9 +49,9 @@ function AppRoutes() {
   return <>
     <Suspense fallback={<LoadingState label="Opening workspace" />}><Routes>
       <Route path="/login" element={session ? <Navigate to="/dashboard" replace /> : <LoginPage onLogin={signIn} />} />
-      <Route element={<ProtectedLayout session={session} onLogout={signOut} />}>
+      <Route element={<ProtectedLayout session={session} onLogout={signOut} onNotify={notify} />}>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        <Route path="/dashboard" element={<PlaceholderPage />} />
+        <Route path="/dashboard" element={<DashboardPage session={session} notify={notify} />} />
         <Route path="/employee-management/directory" element={<EmployeeDirectory notify={notify} />} />
         <Route path="/employee-management/organizational-structure" element={<OrganizationalStructure />} />
         <Route path="/employee-management/manage-profiles" element={<ManageProfiles notify={notify} />} />
