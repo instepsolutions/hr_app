@@ -35,6 +35,13 @@ public class SecurityConfig {
                                 "/actuator/health"
                         ).permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        // PMS analytics are for HR roles; goal APIs also admit EMPLOYEE, and the service limits
+                        // that role to its own goals and its own progress updates.
+                        .requestMatchers("/api/pms/dashboard/**", "/api/pms/goals/overview",
+                                "/api/pms/goals/categories-summary")
+                        .hasAnyRole("SUPER_ADMIN", "HR_ADMIN", "HR_MANAGER", "HR_EXECUTIVE")
+                        .requestMatchers("/api/pms/**")
+                        .hasAnyRole("SUPER_ADMIN", "HR_ADMIN", "HR_MANAGER", "HR_EXECUTIVE", "EMPLOYEE")
                         .anyRequest().hasAnyRole("SUPER_ADMIN", "HR_ADMIN", "HR_MANAGER", "HR_EXECUTIVE")
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

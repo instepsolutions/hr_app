@@ -13,6 +13,9 @@ const EmployeeLifecycle = lazy(() => import('./pages/EmployeeLifecycle'))
 const BulkActions = lazy(() => import('./pages/BulkActions'))
 const LoginPage = lazy(() => import('./pages/LoginPage'))
 const PlaceholderPage = lazy(() => import('./pages/PlaceholderPage'))
+const PMSDashboardPage = lazy(() => import('./pms/PMSDashboardPage'))
+const GoalManagementPage = lazy(() => import('./pms/GoalManagementPage'))
+const PMSPlaceholderPage = lazy(() => import('./pms/PMSPlaceholderPage'))
 
 function ProtectedLayout({ session, onLogout, onNotify }) {
   return session ? <AppShell session={session} onLogout={onLogout} onNotify={onNotify}><Outlet /></AppShell> : <Navigate to="/login" replace />
@@ -58,6 +61,10 @@ function AppRoutes() {
         <Route path="/employee-management/employee-lifecycle" element={<EmployeeLifecycle />} />
         <Route path="/employee-management/bulk-actions" element={<BulkActions notify={notify} />} />
         <Route path="/employee-management/employees/:id" element={<EmployeeDetails />} />
+        <Route path="/performance" element={<Navigate to="/performance/pms-dashboard" replace />} />
+        <Route path="/performance/pms-dashboard/:tab?" element={<PMSDashboardPage />} />
+        <Route path="/performance/goal-management/:tab?" element={<GoalManagementPage session={session} notify={notify} />} />
+        <Route path="/performance/:section" element={<PMSPlaceholderPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes></Suspense>

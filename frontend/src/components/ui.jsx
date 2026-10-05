@@ -102,12 +102,12 @@ export function Toast({ toast, onClose }) {
   return <div className={`toast toast-${toast.type || 'success'}`} role="status"><span>{toast.type === 'error' ? <AlertCircle size={17} /> : <Check size={17} />}</span><p>{toast.message}</p><button onClick={onClose} aria-label="Dismiss notification"><X size={16} /></button></div>
 }
 
-export function Pagination({ page, totalPages, totalElements, size, onPageChange, onSizeChange }) {
+export function Pagination({ page, totalPages, totalElements, size, onPageChange, onSizeChange, noun = 'employees' }) {
   const start = totalElements === 0 ? 0 : page * size + 1
   const end = Math.min((page + 1) * size, totalElements)
   return (
     <div className="pagination">
-      <div className="pagination-info">Showing <strong>{start}–{end}</strong> of <strong>{totalElements}</strong> employees</div>
+      <div className="pagination-info">Showing <strong>{start}–{end}</strong> of <strong>{totalElements}</strong> {noun}</div>
       <div className="pagination-controls">
         <label className="page-size-select"><span>Rows</span><select value={size} onChange={(event) => onSizeChange(Number(event.target.value))}><option value={10}>10</option><option value={20}>20</option><option value={50}>50</option></select></label>
         <span className="page-count">Page {totalPages === 0 ? 0 : page + 1} of {totalPages}</span>

@@ -24,7 +24,10 @@ apiClient.interceptors.request.use((config) => {
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
-    if ([401, 403].includes(error.response?.status) && !error.config?.url?.includes('/auth/login')) {
+    const status = error.response?.status
+    // A 403 that carries our JSON error body is a business rule (for example a role limit), not an expired session.
+    const isBusinessForbidden = status === 403 && typeof error.response?.data?.message === 'string'
+    if ([401, 403].includes(status) && !isBusinessForbidden && !error.config?.url?.includes('/auth/login')) {
       localStorage.removeItem(AUTH_STORAGE_KEY)
       window.dispatchEvent(new CustomEvent('hrms:unauthorized'))
     }

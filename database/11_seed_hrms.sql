@@ -11,5 +11,7 @@ SET DEFINE OFF
 @database/09_seed_admin.sql
 @database/13_create_dashboard_tables.sql
 @database/14_seed_dashboard_widgets.sql
+@database/15_create_pms_tables.sql
+@database/16_seed_pms_data.sql
 
 EXIT SUCCESS

@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Activity, Banknote, BookOpenCheck, Building2, CalendarDays, ChevronDown, ChevronLeft,
-  ChevronRight, ContactRound, FileText, Gift, LayoutDashboard, Network, ShieldCheck,
+  ChevronRight, ClipboardCheck, ContactRound, FileText, Gift, LayoutDashboard, Network, ShieldCheck,
+  Target,
   UserRoundPlus, UsersRound, Workflow,
 } from 'lucide-react'
 import { NavLink, useLocation } from 'react-router-dom'
@@ -14,12 +15,20 @@ const employeeLinks = [
   { label: 'Bulk Actions', to: '/employee-management/bulk-actions', icon: Workflow },
 ]
 
+const pmsLinks = [
+  { label: 'PMS Dashboard', to: '/performance/pms-dashboard', icon: Activity },
+  { label: 'Goal Management', to: '/performance/goal-management', icon: Target },
+  { label: 'KRA & KPI Management', to: '/performance/kra-kpi', icon: Workflow },
+  { label: 'Self Appraisal', to: '/performance/self-appraisal', icon: ClipboardCheck },
+  { label: 'Manager Review', to: '/performance/manager-review', icon: UsersRound },
+  { label: 'PIP Management', to: '/performance/pip-management', icon: ShieldCheck },
+]
+
 const futureModules = [
   { label: 'Recruitment', icon: UserRoundPlus },
   { label: 'Onboarding', icon: BookOpenCheck },
   { label: 'Attendance & Leave', icon: CalendarDays },
   { label: 'Payroll', icon: Banknote },
-  { label: 'Performance (PMS)', icon: Activity },
   { label: 'Training & Development', icon: BookOpenCheck },
   { label: 'Compensation', icon: Banknote },
   { label: 'Benefits', icon: Gift },
@@ -33,7 +42,13 @@ const futureModules = [
 export default function Sidebar({ collapsed, onToggle, mobileOpen, onNavigate }) {
   const { pathname } = useLocation()
   const employeeAreaActive = pathname.startsWith('/employee-management')
+  const pmsAreaActive = pathname.startsWith('/performance')
   const [employeeOpen, setEmployeeOpen] = useState(employeeAreaActive)
+  const [pmsOpen, setPmsOpen] = useState(pmsAreaActive)
+
+  useEffect(() => {
+    if (pmsAreaActive) setPmsOpen(true)
+  }, [pmsAreaActive])
 
   return (
     <>
@@ -56,6 +71,12 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onNavigate })
               <UsersRound size={18} strokeWidth={1.9} />{!collapsed && <><span>Employee Management</span><ChevronDown className={`nav-chevron ${employeeOpen ? 'is-open' : ''}`} size={14} /></>}
             </button>
             {!collapsed && employeeOpen && <div className="nav-submenu">{employeeLinks.map(({ label, to, icon: Icon }) => <NavLink key={to} to={to} onClick={onNavigate} className={({ isActive }) => `nav-item nav-subitem ${isActive ? 'is-active' : ''}`}><Icon size={16} strokeWidth={1.9} /><span>{label}</span></NavLink>)}</div>}
+          </div>
+          <div className={`nav-group ${pmsAreaActive ? 'is-current' : ''}`}>
+            <button className={`nav-item nav-group-trigger ${pmsAreaActive ? 'is-group-active' : ''}`} onClick={() => setPmsOpen((open) => !open)} aria-expanded={pmsOpen} title={collapsed ? 'Performance Management' : undefined}>
+              <Activity size={18} strokeWidth={1.9} />{!collapsed && <><span>Performance (PMS)</span><ChevronDown className={`nav-chevron ${pmsOpen ? 'is-open' : ''}`} size={14} /></>}
+            </button>
+            {!collapsed && pmsOpen && <div className="nav-submenu nav-pms-submenu">{pmsLinks.map(({ label, to, icon: Icon }) => <NavLink key={to} to={to} onClick={onNavigate} className={({ isActive }) => `nav-item nav-subitem ${isActive ? 'is-active' : ''}`}><Icon size={16} strokeWidth={1.9} /><span>{label}</span></NavLink>)}</div>}
           </div>
           {futureModules.map(({ label, icon: Icon }) => <div key={label} className="nav-item nav-item-disabled" aria-disabled="true" title={`${label} is not part of this release`}><Icon size={18} strokeWidth={1.9} />{!collapsed && <span>{label}</span>}</div>)}
         </nav>

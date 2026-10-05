@@ -39,6 +39,12 @@ C:\HRMS\hr_app\backend\src\main\java\com\hrms\exception\DuplicateResourceExcepti
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\exception\GlobalExceptionHandler.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\exception\ResourceNotFoundException.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\HrmsApplication.java
+C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsAccess.java
+C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsAnalyticsService.java
+C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsDashboardController.java
+C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsDtos.java
+C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsGoalController.java
+C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsGoalService.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\repository\AppUserRepository.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\repository\AuditLogRepository.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\repository\BulkActionEmployeeRepository.java
