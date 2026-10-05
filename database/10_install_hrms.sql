@@ -16,5 +16,6 @@ SET DEFINE OFF
 @database/14_seed_dashboard_widgets.sql
 @database/15_create_pms_tables.sql
 @database/16_seed_pms_data.sql
+@database/18_create_pms_workspace.sql
 
 EXIT SUCCESS

@@ -1,0 +1,185 @@
+.pms-workspace-page { padding-top: 21px; }
+.pms-workspace-toolbar { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin: 0 0 9px; }
+.pms-workspace-toolbar .pms-period-control { gap: 7px; }
+.pms-workspace-toolbar .pms-period-control > span:first-child { color: #647387; font-weight: 600; }
+.pms-workspace-dept-filter { min-height: 35px; display: inline-flex; align-items: center; gap: 7px; padding: 0 9px; border: 1px solid var(--pms-line); border-radius: 4px; color: #667586; }
+.pms-workspace-dept-filter select { max-width: 190px; border: 0; outline: 0; background: transparent; color: #526478; font-size: 10px; }
+.pms-workspace-tabs { gap: 18px; }
+.pms-workspace-metrics { margin-bottom: 12px; }
+.pms-workspace-page .stat-card { min-height: 104px; padding: 11px 12px 9px; }
+.pms-workspace-page .stat-value { margin: 8px 0 3px; font-size: 21px; }
+.pms-workspace-page .stat-note { font-size: 8px; }
+.pms-workspace-charts, .pms-workspace-lower, .pms-workspace-summary-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pms-workspace-charts { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(1.15fr, 1.3fr); }
+.pms-workspace-donut-layout { min-height: 220px; grid-template-columns: minmax(130px, .95fr) minmax(100px, 1.05fr); padding: 7px 10px; }
+.pms-workspace-donut-chart { height: 196px; }
+.pms-workspace-trend .pms-chart-area { height: 224px; }
+.pms-workspace-bar { height: 227px; }
+.pms-workspace-recent-list { min-height: 188px; padding: 2px 11px; }
+.pms-workspace-recent-list > div { min-height: 34px; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 7px; border-bottom: 1px solid #edf0ef; }
+.pms-workspace-recent-list > div > span:first-child { min-width: 0; display: grid; gap: 2px; }
+.pms-workspace-recent-list strong { overflow: hidden; color: #4a5c70; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+.pms-workspace-recent-list small, .pms-workspace-recent-list time { color: #8995a2; font-size: 7px; white-space: nowrap; }
+.pms-workspace-recent-list .pms-status { padding: 3px 5px; font-size: 7px; }
+.pms-workspace-recent > .pms-text-button { display: block; margin: 0 auto 9px; }
+.pms-workspace-status-bars { display: grid; gap: 16px; padding: 21px 15px; }
+.pms-workspace-status-bars > div { display: grid; grid-template-columns: 72px minmax(0, 1fr) 34px; align-items: center; gap: 8px; color: #718092; font-size: 8px; }
+.pms-workspace-status-bars i, .pms-workspace-score i { height: 6px; overflow: hidden; border-radius: 4px; background: #edf1f4; }
+.pms-workspace-status-bars b, .pms-workspace-score i b { display: block; height: 100%; border-radius: inherit; }
+.pms-workspace-status-bars strong { color: #43576b; text-align: right; }
+.pms-workspace-alignment { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 12px 8px 7px; }
+.pms-workspace-alignment > div { display: grid; justify-items: center; gap: 5px; padding: 9px 4px; border-right: 1px solid #edf0ef; }
+.pms-workspace-alignment > div:last-child { border: 0; }
+.pms-workspace-alignment small { min-height: 20px; color: #76838d; font-size: 7px; text-align: center; }
+.pms-workspace-alignment strong { color: #236d5c; font: 700 16px 'Manrope', sans-serif; }
+.pms-workspace-score { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; margin: 6px 12px 0; color: #76838d; font-size: 8px; }
+.pms-workspace-score strong { color: #25465e; }
+.pms-workspace-score i { grid-column: 1 / -1; }
+.pms-workspace-score i b { background: linear-gradient(90deg, #1c9b70 0 68%, #e6a13a 68% 88%, #cf554f 88%); }
+.pms-workspace-summary-row > .pms-panel > .pms-text-button { margin: 4px 12px 11px; }
+.pms-workspace-actions { display: grid; gap: 1px; padding: 7px 10px 11px; }
+.pms-workspace-actions button { min-height: 29px; display: flex; align-items: center; gap: 8px; padding: 0 4px; border: 0; background: transparent; color: #3d5d7c; font-size: 9px; text-align: left; cursor: pointer; }
+.pms-workspace-actions button:hover { color: #176f5d; background: #f5f9f7; }
+.pms-workspace-actions svg { color: #286bd0; }
+.pms-workspace-tooltip { display: grid; gap: 4px; padding: 8px 10px; border: 1px solid #e3e9ee; border-radius: 4px; background: white; box-shadow: 0 7px 20px #23364b18; color: #526478; font-size: 9px; }
+.pms-workspace-tooltip strong { color: #24364a; }
+.pms-workspace-library { margin-top: 12px; }
+.pms-workspace-library .pms-panel-heading { min-height: 47px; }
+.pms-workspace-library .pms-panel-heading .pms-button { min-height: 30px; }
+.pms-workspace-library-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; padding: 9px 11px; border-bottom: 1px solid #edf0ef; }
+.pms-workspace-library-filters .pms-search { max-width: none; }
+.pms-workspace-library-filters select, .pms-workspace-mapping-toolbar select { min-height: 31px; padding: 0 8px; border: 1px solid var(--pms-line); border-radius: 4px; background: #fff; color: #596a7a; font-size: 9px; }
+.pms-icon-button { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--pms-line); border-radius: 4px; background: white; color: #68798b; cursor: pointer; }
+.pms-icon-button:hover { color: #176f5d; background: #f2f8f5; }
+.pms-workspace-library-table { min-width: 1050px; }
+.pms-workspace-library-table th, .pms-workspace-library-table td { padding: 7px 8px; font-size: 8px; }
+.pms-workspace-library-table td strong { color: #40546a; font-size: 8px; }
+.pms-truncate-cell { max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+.pms-workspace-alignment-top { display: flex; flex-wrap: wrap; align-items: center; gap: 0; padding: 11px; border-bottom: 1px solid #edf0ef; }
+.pms-workspace-alignment-top > div { min-width: 130px; display: grid; justify-items: center; gap: 4px; padding: 5px 14px; border-right: 1px solid #edf0ef; }
+.pms-workspace-alignment-top > div strong { color: #236d5c; font: 700 17px 'Manrope', sans-serif; }
+.pms-workspace-alignment-top > div span { color: #788592; font-size: 8px; }
+.pms-workspace-alignment-top > strong { margin-left: auto; color: #176f5d; font-size: 11px; }
+.pms-workspace-mapping { margin-top: 12px; }
+.pms-workspace-mapping-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; padding: 11px 13px; border-bottom: 1px solid #edf0ef; }
+.pms-workspace-mapping-toolbar > label { min-width: 190px; display: grid; gap: 4px; color: #748191; font-size: 8px; }
+.pms-workspace-mapping-toolbar > span { color: #758394; font-size: 9px; }
+.pms-workspace-mapping-toolbar > .pms-button { margin-left: auto; }
+.pms-workspace-mapping-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 12px; }
+.pms-mapping-picker { min-width: 0; border: 1px solid #e8ecee; border-radius: 4px; }
+.pms-mapping-picker h3 { display: flex; justify-content: space-between; align-items: center; margin: 0; padding: 10px; border-bottom: 1px solid #edf0ef; color: #40556a; font: 700 10px 'Manrope', sans-serif; }
+.pms-mapping-picker h3 span { color: #86939f; font: 500 8px 'DM Sans', sans-serif; }
+.pms-mapping-picker > div { max-height: 380px; overflow: auto; }
+.pms-mapping-picker label { min-height: 43px; display: grid; grid-template-columns: 16px minmax(0, 1fr) 64px; align-items: center; gap: 8px; padding: 5px 9px; border-bottom: 1px solid #f0f2f3; }
+.pms-mapping-picker label > input[type=checkbox] { accent-color: #197b67; }
+.pms-mapping-picker label > span { min-width: 0; display: grid; gap: 3px; }
+.pms-mapping-picker label strong { overflow: hidden; color: #4a5b6e; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+.pms-mapping-picker label small { overflow: hidden; color: #8b96a2; font-size: 7px; text-overflow: ellipsis; white-space: nowrap; }
+.pms-mapping-picker label > input[type=number] { width: 64px; min-height: 26px; padding: 2px 5px; border: 1px solid #e3e8ed; border-radius: 3px; font-size: 8px; }
+.pms-mapping-picker:not(.has-weight) label { grid-template-columns: 16px minmax(0, 1fr); }
+.pms-workspace-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 14px; }
+.pms-workspace-form label { min-width: 0; display: grid; gap: 5px; color: #637282; font-size: 9px; font-weight: 600; }
+.pms-workspace-form input, .pms-workspace-form select, .pms-workspace-form textarea { width: 100%; min-height: 33px; padding: 7px 8px; border: 1px solid #dfe5e3; border-radius: 4px; background: #fff; color: #33495c; font-size: 10px; }
+.pms-workspace-form textarea { resize: vertical; }
+.pms-workspace-form .pms-form-error { grid-column: 1 / -1; margin: 0; }
+.pms-workspace-form .field-span-two { grid-column: 1 / -1; }
+.pms-workspace-detail { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 14px; }
+.pms-workspace-detail > div { min-width: 0; display: grid; gap: 4px; padding: 8px; border-bottom: 1px solid #edf0ef; }
+.pms-workspace-detail small { color: #81909e; font-size: 8px; text-transform: capitalize; }
+.pms-workspace-detail strong { overflow-wrap: anywhere; color: #40546a; font-size: 10px; }
+.pms-workspace-hidden-counts { display: none; }
+@media (max-width: 1180px) { .pms-workspace-charts, .pms-workspace-lower, .pms-workspace-summary-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }.pms-workspace-trend { grid-column: 1 / -1; } }
+@media (max-width: 850px) { .pms-workspace-charts, .pms-workspace-lower, .pms-workspace-summary-row, .pms-workspace-mapping-grid { grid-template-columns: minmax(0, 1fr); }.pms-workspace-trend { grid-column: auto; }.pms-workspace-toolbar { justify-content: flex-start; }.pms-workspace-alignment-top > strong { margin: 9px 0 0; } }
+@media (max-width: 560px) { .pms-workspace-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; }.pms-workspace-toolbar .pms-period-control { grid-column: 1 / -1; width: 100%; justify-content: center; }.pms-workspace-toolbar .pms-period-control input { width: min(28vw, 110px); }.pms-workspace-dept-filter { min-width: 0; }.pms-workspace-dept-filter select { max-width: 130px; }.pms-workspace-page .stat-card { min-height: 91px; padding: 9px; }.pms-workspace-page .stat-value { font-size: 18px; }.pms-workspace-library-filters { align-items: stretch; }.pms-workspace-library-filters .pms-search { min-width: 100%; }.pms-workspace-library-filters select { min-width: calc(50% - 4px); flex: 1; }.pms-workspace-mapping-toolbar > label { width: 100%; }.pms-workspace-mapping-toolbar > .pms-button { margin-left: 0; }.pms-workspace-alignment-top > div { min-width: 50%; border-right: 0; }.pms-workspace-alignment-top > div:nth-child(odd) { border-right: 1px solid #edf0ef; }.pms-workspace-alignment-top > strong { width: 100%; text-align: center; }.pms-workspace-form { grid-template-columns: 1fr; }.pms-workspace-form .field-span-two { grid-column: auto; }.pms-workspace-detail { grid-template-columns: 1fr; } }
+
+.appraisal-top-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1.05fr); }
+.appraisal-table-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr) minmax(210px, .8fr); }
+.appraisal-bottom-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(220px, .9fr) minmax(210px, .8fr); gap: 12px; margin-bottom: 12px; }
+.appraisal-bottom-grid > .pms-panel { min-width: 0; }
+.appraisal-rating-axis { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 5px; padding: 0 9px 10px; color: #7e8b99; font-size: 7px; }
+.appraisal-timeline-list { display: grid; padding: 8px 14px; }
+.appraisal-timeline-list > div { position: relative; min-height: 52px; display: flex; align-items: center; gap: 10px; }
+.appraisal-timeline-list > div:not(:last-child)::before { position: absolute; top: 30px; bottom: -14px; left: 5px; width: 2px; background: #dce4eb; content: ''; }
+.appraisal-timeline-list > div > i { z-index: 1; width: 12px; height: 12px; flex: 0 0 12px; border: 3px solid #c6d1de; border-radius: 50%; background: white; }
+.appraisal-timeline-list > div.is-current > i { border-color: #1d9a74; }
+.appraisal-timeline-list > div > span { display: grid; gap: 4px; }
+.appraisal-timeline-list strong { color: #465a6f; font-size: 9px; text-transform: capitalize; }
+.appraisal-timeline-list small { color: #82909c; font-size: 8px; }
+.pms-workspace-my-card .pms-panel-heading { align-items: center; }
+.appraisal-employee-summary { display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; align-items: center; gap: 9px; padding: 12px 13px 8px; }
+.appraisal-avatar { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: #e9f1fb; color: #38699d; font-size: 10px; font-weight: 700; }
+.appraisal-employee-summary > div { min-width: 0; display: grid; gap: 3px; }
+.appraisal-employee-summary strong { color: #354c64; font-size: 10px; }
+.appraisal-employee-summary small, .appraisal-submitted-at { color: #8693a0; font-size: 8px; }
+.appraisal-summary-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 6px 12px 12px; }
+.appraisal-summary-stats > div { min-width: 0; display: grid; grid-template-columns: 17px minmax(0, 1fr); gap: 3px 5px; align-items: center; padding: 8px 6px; border: 1px solid #e9edf0; border-radius: 4px; }
+.appraisal-summary-stats svg { color: #286bd0; }
+.appraisal-summary-stats span { overflow: hidden; color: #7c8996; font-size: 7px; text-overflow: ellipsis; white-space: nowrap; }
+.appraisal-summary-stats strong { grid-column: 2; color: #40566b; font-size: 9px; }
+.appraisal-submitted-at { display: block; padding: 0 13px 10px; }
+.appraisal-insights-panel { background: linear-gradient(145deg, #f2f7ff, #fff 75%); }
+.appraisal-insights-panel > div { display: grid; gap: 9px; padding: 14px 12px; }
+.appraisal-insights-panel p { display: grid; grid-template-columns: 15px minmax(0, 1fr) auto; gap: 6px; align-items: center; margin: 0; color: #607286; font-size: 8px; }
+.appraisal-insights-panel svg { color: #2876ce; }
+.appraisal-insights-panel strong { color: #3f5871; font-size: 8px; }
+.appraisal-wide-panel .pms-table-scroll { max-height: 300px; }
+.appraisal-wide-panel .pms-text-button { display: block; margin: 0 auto 8px; }
+.appraisal-timeline-editor { display: grid; gap: 0; padding: 3px 13px; }
+.appraisal-timeline-editor article { display: grid; grid-template-columns: 24px minmax(90px, 1fr) minmax(120px, .8fr) minmax(120px, .8fr); align-items: center; gap: 9px; min-height: 62px; border-bottom: 1px solid #edf0ef; }
+.appraisal-timeline-editor .timeline-step { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; background: #edf4f2; color: #277660; font-size: 9px; }
+.appraisal-timeline-editor strong { color: #526579; font-size: 9px; text-transform: capitalize; }
+.appraisal-timeline-editor label, .appraisal-employee-fields > div { display: grid; gap: 4px; color: #84919d; font-size: 8px; }
+.appraisal-timeline-editor input { min-width: 0; min-height: 30px; padding: 4px 6px; border: 1px solid #e2e7e9; border-radius: 3px; color: #526478; font-size: 9px; }
+.appraisal-employee-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; padding: 13px; }
+.appraisal-employee-fields strong { overflow: hidden; color: #43586e; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.appraisal-goal-list { display: grid; gap: 9px; padding: 12px; }
+.appraisal-goal-item { border: 1px solid #e8edef; border-radius: 4px; }
+.appraisal-goal-item > header { min-height: 43px; display: flex; justify-content: space-between; align-items: center; gap: 9px; padding: 7px 10px; border-bottom: 1px solid #edf0ef; }
+.appraisal-goal-item > header > div { min-width: 0; display: grid; gap: 3px; }
+.appraisal-goal-item > header strong { overflow: hidden; color: #42566a; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.appraisal-goal-item > header small { color: #88949e; font-size: 8px; }
+.appraisal-reviewed { display: inline-flex; align-items: center; gap: 5px; color: #697b8a; font-size: 8px; white-space: nowrap; }
+.appraisal-reviewed input { accent-color: #18866d; }
+.appraisal-goal-fields { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; padding: 10px; }
+.appraisal-goal-fields > label, .appraisal-comments-field { min-width: 0; display: grid; gap: 5px; color: #718091; font-size: 8px; }
+.appraisal-goal-fields input, .appraisal-goal-fields textarea, .appraisal-comments-field textarea { min-width: 0; width: 100%; min-height: 30px; padding: 6px 7px; border: 1px solid #e1e7e9; border-radius: 3px; color: #45596d; font-size: 9px; }
+.appraisal-goal-fields textarea, .appraisal-comments-field textarea { resize: vertical; }
+.appraisal-goal-fields output { min-height: 30px; display: flex; align-items: center; color: #26765f; font-size: 9px; }
+.appraisal-goal-comment { grid-column: 1 / -1; }
+.appraisal-rating-picker { display: flex; flex-wrap: wrap; gap: 4px; }
+.appraisal-rating-picker button { min-width: 31px; height: 28px; display: inline-flex; align-items: center; justify-content: center; gap: 3px; padding: 0 5px; border: 1px solid #e2e7e9; border-radius: 3px; background: #fff; color: #82909a; font-size: 8px; cursor: pointer; }
+.appraisal-rating-picker button.is-selected { border-color: #7eb49f; background: #eef7f2; color: #1b8165; }
+.appraisal-rating-picker button:disabled { cursor: not-allowed; opacity: .65; }
+.appraisal-competencies { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 15px; padding: 5px 13px; }
+.appraisal-competencies > div { min-height: 48px; display: flex; justify-content: space-between; align-items: center; gap: 9px; border-bottom: 1px solid #edf0ef; }
+.appraisal-competencies strong { color: #536679; font-size: 9px; }
+.appraisal-overall-rating { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; padding: 14px; }
+.appraisal-overall-rating > div { display: grid; gap: 6px; }
+.appraisal-overall-rating > div:first-child > strong { color: #29445f; font: 800 24px 'Manrope', sans-serif; }
+.appraisal-overall-rating > div:first-child > strong small { color: #93a0ac; font: 500 11px 'DM Sans', sans-serif; }
+.appraisal-overall-rating > div:first-child > span, .appraisal-overall-rating > div > small { color: #7b8996; font-size: 8px; }
+.appraisal-overall-rating > div:last-child { min-width: 130px; padding: 11px; border-left: 1px solid #edf0ef; }
+.appraisal-overall-rating > div:last-child > strong { color: #1c8167; font: 700 16px 'Manrope', sans-serif; }
+.appraisal-comments-field { margin: 0 14px 14px; }
+.appraisal-documents { display: grid; gap: 10px; padding: 12px 14px; }
+.appraisal-documents label { justify-self: start; position: relative; cursor: pointer; }
+.appraisal-documents input[type=file] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+.appraisal-documents > div { display: flex; flex-wrap: wrap; gap: 6px; }
+.appraisal-documents > div span { display: inline-flex; align-items: center; gap: 5px; padding: 5px 7px; border: 1px solid #e6ecee; border-radius: 3px; color: #617285; font-size: 8px; }
+.appraisal-documents > small { color: #8a96a1; font-size: 8px; }
+.appraisal-form-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 8px; padding: 5px 0 12px; }
+.appraisal-comment-thread { display: grid; gap: 0; padding: 2px 13px; }
+.appraisal-comment-thread article { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 10px; padding: 12px 0; border-bottom: 1px solid #edf0ef; }
+.comment-role { align-self: start; justify-self: start; padding: 4px 6px; border-radius: 3px; background: #edf3fa; color: #3f6b9a; font-size: 7px; font-weight: 700; }
+.role-hr { background: #f1ecf7; color: #73549a; }.role-manager { background: #fcf2e3; color: #a66b22; }.role-employee { background: #eaf5ef; color: #24785f; }
+.appraisal-comment-thread article > div { min-width: 0; }
+.appraisal-comment-thread header { display: flex; justify-content: space-between; gap: 9px; }
+.appraisal-comment-thread header strong { color: #43586d; font-size: 9px; }.appraisal-comment-thread time { color: #8995a1; font-size: 8px; }
+.appraisal-comment-thread p { margin: 6px 0 0; color: #647587; font-size: 9px; line-height: 1.5; white-space: pre-wrap; }
+.appraisal-comment-form { display: grid; justify-items: end; gap: 8px; padding: 12px 13px; }
+.appraisal-comment-form textarea { width: 100%; padding: 8px; border: 1px solid #e0e6e8; border-radius: 3px; font: 9px 'DM Sans', sans-serif; resize: vertical; }
+.appraisal-guidelines { display: grid; gap: 10px; padding: 14px; color: #647587; font-size: 10px; }
+.appraisal-guidelines p { margin: 0; }
+@media (max-width: 1180px) { .appraisal-top-grid, .appraisal-table-grid, .appraisal-bottom-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.appraisal-timeline-list { grid-column: 1 / -1; } }
+@media (max-width: 850px) { .appraisal-top-grid, .appraisal-table-grid, .appraisal-bottom-grid { grid-template-columns: minmax(0, 1fr); }.appraisal-timeline-list { grid-column: auto; }.appraisal-goal-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }.appraisal-timeline-editor article { grid-template-columns: 24px minmax(80px, 1fr) repeat(2, minmax(110px, .8fr)); } }
+@media (max-width: 560px) { .appraisal-employee-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }.appraisal-summary-stats { grid-template-columns: 1fr; }.appraisal-summary-stats > div { grid-template-columns: 18px 1fr auto; }.appraisal-summary-stats strong { grid-column: 3; }.appraisal-goal-fields { grid-template-columns: 1fr 1fr; }.appraisal-goal-comment { grid-column: 1 / -1; }.appraisal-competencies { grid-template-columns: 1fr; }.appraisal-timeline-editor article { grid-template-columns: 24px minmax(0, 1fr) 1fr; padding: 8px 0; }.appraisal-timeline-editor article label:last-child { grid-column: 3; }.appraisal-timeline-editor strong { grid-column: 2 / -1; }.appraisal-comment-thread article { grid-template-columns: 1fr; gap: 6px; }.appraisal-employee-summary { grid-template-columns: 36px minmax(0, 1fr); }.appraisal-employee-summary > .pms-status { grid-column: 2; justify-self: start; } }

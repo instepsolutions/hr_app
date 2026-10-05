@@ -45,6 +45,9 @@ C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsDashboardController.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsDtos.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsGoalController.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsGoalService.java
+C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsWorkspaceController.java
+C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsWorkspaceDtos.java
+C:\HRMS\hr_app\backend\src\main\java\com\hrms\pms\PmsWorkspaceService.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\repository\AppUserRepository.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\repository\AuditLogRepository.java
 C:\HRMS\hr_app\backend\src\main\java\com\hrms\repository\BulkActionEmployeeRepository.java

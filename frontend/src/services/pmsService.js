@@ -60,6 +60,89 @@ export const pmsService = {
     ])
     return { categories: categories.data, kras: kras.data, kpis: kpis.data }
   },
+  async setupOverview(params, signal) {
+    return (await apiClient.get('/pms/setup/overview', { params, signal })).data
+  },
+  async listKras(params, signal) {
+    return (await apiClient.get('/pms/setup/kras', { params, signal })).data
+  },
+  async createKra(payload) {
+    return (await apiClient.post('/pms/setup/kras', payload)).data
+  },
+  async updateKra(id, payload) {
+    return (await apiClient.put(`/pms/setup/kras/${id}`, payload)).data
+  },
+  async deleteKra(id) {
+    return apiClient.delete(`/pms/setup/kras/${id}`)
+  },
+  async duplicateKra(id) {
+    return (await apiClient.post(`/pms/setup/kras/${id}/duplicate`)).data
+  },
+  async listKpis(params, signal) {
+    return (await apiClient.get('/pms/setup/kpis', { params, signal })).data
+  },
+  async createKpi(payload) {
+    return (await apiClient.post('/pms/setup/kpis', payload)).data
+  },
+  async updateKpi(id, payload) {
+    return (await apiClient.put(`/pms/setup/kpis/${id}`, payload)).data
+  },
+  async deleteKpi(id) {
+    return apiClient.delete(`/pms/setup/kpis/${id}`)
+  },
+  async duplicateKpi(id) {
+    return (await apiClient.post(`/pms/setup/kpis/${id}/duplicate`)).data
+  },
+  async departmentMappings(departmentId, signal) {
+    return (await apiClient.get(`/pms/setup/departments/${departmentId}/mappings`, { signal })).data
+  },
+  async saveDepartmentMappings(departmentId, payload) {
+    return (await apiClient.put(`/pms/setup/departments/${departmentId}/mappings`, payload)).data
+  },
+  async employeeMappings(employeeId, signal) {
+    return (await apiClient.get(`/pms/setup/employees/${employeeId}/mappings`, { signal })).data
+  },
+  async saveEmployeeMappings(employeeId, payload) {
+    return (await apiClient.put(`/pms/setup/employees/${employeeId}/mappings`, payload)).data
+  },
+  async setupAlignment(signal) {
+    return (await apiClient.get('/pms/setup/alignment', { signal })).data
+  },
+  async setupHistory(params, signal) {
+    return (await apiClient.get('/pms/setup/history', { params, signal })).data
+  },
+  async exportSetup(params) {
+    const response = await apiClient.get('/pms/setup/export', { params, responseType: 'blob' })
+    blobDownload(response, 'kra-kpi-report.csv')
+  },
+  async appraisalOverview(params, signal) {
+    return (await apiClient.get('/pms/appraisals/overview', { params, signal })).data
+  },
+  async myAppraisal(signal) {
+    return (await apiClient.get('/pms/appraisals/mine', { signal })).data
+  },
+  async saveMyAppraisal(payload) {
+    return (await apiClient.put('/pms/appraisals/mine', payload)).data
+  },
+  async submitMyAppraisal() {
+    return (await apiClient.post('/pms/appraisals/mine/submit')).data
+  },
+  async withdrawMyAppraisal() {
+    return (await apiClient.post('/pms/appraisals/mine/withdraw')).data
+  },
+  async appraisalComments(appraisalId, signal) {
+    return (await apiClient.get(`/pms/appraisals/${appraisalId}/comments`, { signal })).data
+  },
+  async addAppraisalComment(appraisalId, payload) {
+    return (await apiClient.post(`/pms/appraisals/${appraisalId}/comments`, payload)).data
+  },
+  async updateAppraisalTimeline(cycleId, payload) {
+    return (await apiClient.put(`/pms/appraisals/cycles/${cycleId}/timeline`, payload)).data
+  },
+  async exportAppraisals(params) {
+    const response = await apiClient.get('/pms/appraisals/export', { params, responseType: 'blob' })
+    blobDownload(response, 'self-appraisal-report.csv')
+  },
   async departments(signal) {
     return (await apiClient.get('/departments', { signal })).data
   },

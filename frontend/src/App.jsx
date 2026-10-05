@@ -15,6 +15,8 @@ const LoginPage = lazy(() => import('./pages/LoginPage'))
 const PlaceholderPage = lazy(() => import('./pages/PlaceholderPage'))
 const PMSDashboardPage = lazy(() => import('./pms/PMSDashboardPage'))
 const GoalManagementPage = lazy(() => import('./pms/GoalManagementPage'))
+const KraKpiSetupPage = lazy(() => import('./pms/KraKpiSetupPage'))
+const SelfAppraisalPage = lazy(() => import('./pms/SelfAppraisalPage'))
 const PMSPlaceholderPage = lazy(() => import('./pms/PMSPlaceholderPage'))
 
 function ProtectedLayout({ session, onLogout, onNotify }) {
@@ -64,6 +66,8 @@ function AppRoutes() {
         <Route path="/performance" element={<Navigate to="/performance/pms-dashboard" replace />} />
         <Route path="/performance/pms-dashboard/:tab?" element={<PMSDashboardPage />} />
         <Route path="/performance/goal-management/:tab?" element={<GoalManagementPage session={session} notify={notify} />} />
+        <Route path="/performance/kra-kpi/:tab?" element={<KraKpiSetupPage notify={notify} />} />
+        <Route path="/performance/self-appraisal/:tab?" element={<SelfAppraisalPage notify={notify} />} />
         <Route path="/performance/:section" element={<PMSPlaceholderPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
