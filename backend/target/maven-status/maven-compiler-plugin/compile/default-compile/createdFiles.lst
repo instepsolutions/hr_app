@@ -1,4 +1,5 @@
 com\hrms\config\OpenApiConfig.class
+com\hrms\pms\PmsReviewController.class
 com\hrms\entity\AuditLog.class
 com\hrms\service\AuditLogService.class
 com\hrms\controller\AuthController.class
@@ -29,9 +30,11 @@ com\hrms\pms\PmsWorkspaceDtos$KpiRequest.class
 com\hrms\repository\BulkActionRepository.class
 com\hrms\dto\EmployeeResponse.class
 com\hrms\entity\AppUser.class
+com\hrms\pms\PmsReviewService.class
 com\hrms\repository\LocationRepository.class
 com\hrms\dto\EmployeeStatisticsResponse.class
 com\hrms\pms\PmsWorkspaceDtos$SetupHistoryRow.class
+com\hrms\pms\PmsReviewService$Scope.class
 com\hrms\pms\PmsWorkspaceController.class
 com\hrms\dto\EmployeeRequest.class
 com\hrms\dto\BulkActionResponse.class
@@ -55,6 +58,7 @@ com\hrms\entity\Employee.class
 com\hrms\repository\DepartmentRepository.class
 com\hrms\repository\EmploymentTypeRepository.class
 com\hrms\dto\LifecycleStatisticsResponse.class
+com\hrms\pms\PmsReviewService$ReviewRow.class
 com\hrms\entity\Location.class
 com\hrms\config\SecurityConfig.class
 com\hrms\entity\BulkAction.class

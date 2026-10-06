@@ -44,6 +44,19 @@ public class PmsAccess {
         }
         return false;
     }
+    
+    public boolean canReviewHr() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null) {
+            return false;
+        }
+        for (GrantedAuthority authority : authentication.getAuthorities()) {
+            if (MANAGE_ROLES.contains(authority.getAuthority()) || "ROLE_HR_EXECUTIVE".equals(authority.getAuthority())) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     /** True when the login holds no HR/admin role, so it may only see and update its own goals. */
     public boolean employeeOnly() {

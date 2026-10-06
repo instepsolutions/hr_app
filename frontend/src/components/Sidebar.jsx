@@ -21,6 +21,7 @@ const pmsLinks = [
   { label: 'KRA & KPI Management', to: '/performance/kra-kpi', icon: Workflow },
   { label: 'Self Appraisal', to: '/performance/self-appraisal', icon: ClipboardCheck },
   { label: 'Manager Review', to: '/performance/manager-review', icon: UsersRound },
+  { label: 'HR Review', to: '/performance/hr-review', icon: ShieldCheck },
   { label: 'PIP Management', to: '/performance/pip-management', icon: ShieldCheck },
 ]
 

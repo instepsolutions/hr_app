@@ -504,7 +504,8 @@ public class PmsWorkspaceService {
         if (current.get("selfRating") == null || current.get("data") == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Save a draft with an overall self rating before submitting.");
         }
-        jdbc.update("UPDATE pms_appraisal SET self_status = 'SUBMITTED', stage = 'SELF_APPRAISAL',"
+        jdbc.update("UPDATE pms_appraisal SET self_status = 'SUBMITTED', manager_status = 'PENDING',"
+                + " hr_status = 'NOT_READY', stage = 'MANAGER_REVIEW',"
                 + " self_submitted_at = SYSTIMESTAMP, updated_at = SYSTIMESTAMP, updated_by = ? WHERE appraisal_id = ?",
                 access.username(), id);
         recordSetup("APPRAISAL_SUBMITTED", "APPRAISAL", id, Objects.toString(current.get("employeeName"), "Employee"),
@@ -522,7 +523,8 @@ public class PmsWorkspaceService {
         if (!withinSelfAppraisalPeriod(id)) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Withdrawal is only allowed during the self-appraisal period.");
         }
-        jdbc.update("UPDATE pms_appraisal SET self_status = 'DRAFT', stage = 'SELF_APPRAISAL', self_submitted_at = NULL,"
+        jdbc.update("UPDATE pms_appraisal SET self_status = 'DRAFT', manager_status = 'NOT_READY',"
+                + " hr_status = 'NOT_READY', stage = 'SELF_APPRAISAL', self_submitted_at = NULL,"
                 + " updated_at = SYSTIMESTAMP, updated_by = ? WHERE appraisal_id = ?", access.username(), id);
         recordSetup("APPRAISAL_WITHDRAWN", "APPRAISAL", id, Objects.toString(current.get("employeeName"), "Employee"),
                 "SUBMITTED", "DRAFT");

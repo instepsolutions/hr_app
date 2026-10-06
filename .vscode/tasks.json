@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "HRMS Review Backend Compile",
+			"type": "shell",
+			"command": "C:\\Users\\shubh\\AppData\\Local\\Temp\\apache-maven-3.9.11\\bin\\mvn.cmd",
+			"args": [
+				"-f",
+				"C:\\HRMS\\hr_app\\backend\\pom.xml",
+				"test",
+				"-B",
+				"-ntp"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

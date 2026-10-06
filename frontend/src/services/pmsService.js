@@ -143,6 +143,61 @@ export const pmsService = {
     const response = await apiClient.get('/pms/appraisals/export', { params, responseType: 'blob' })
     blobDownload(response, 'self-appraisal-report.csv')
   },
+  async managerReviewOverview(params, signal) {
+    return (await apiClient.get('/pms/reviews/manager/overview', { params, signal })).data
+  },
+  async managerReviewQueue(params, signal) {
+    return (await apiClient.get('/pms/reviews/manager', { params, signal })).data
+  },
+  async getManagerReview(appraisalId, signal) {
+    return (await apiClient.get(`/pms/reviews/manager/${appraisalId}`, { signal })).data
+  },
+  async saveManagerReview(appraisalId, payload) {
+    return (await apiClient.put(`/pms/reviews/manager/${appraisalId}/draft`, payload)).data
+  },
+  async submitManagerReview(appraisalId) {
+    return (await apiClient.post(`/pms/reviews/manager/${appraisalId}/submit`)).data
+  },
+  async sendBackManagerReview(appraisalId, reason) {
+    return (await apiClient.post(`/pms/reviews/manager/${appraisalId}/send-back`, { reason })).data
+  },
+  async requestManagerClarification(appraisalId, reason) {
+    return (await apiClient.post(`/pms/reviews/manager/${appraisalId}/clarification`, { reason })).data
+  },
+  async remindManagerReview(appraisalId) {
+    return (await apiClient.post(`/pms/reviews/manager/${appraisalId}/remind`)).data
+  },
+  async hrReviewOverview(params, signal) {
+    return (await apiClient.get('/pms/reviews/hr/overview', { params, signal })).data
+  },
+  async hrReviewQueue(params, signal) {
+    return (await apiClient.get('/pms/reviews/hr', { params, signal })).data
+  },
+  async hrReviewers(signal) {
+    return (await apiClient.get('/pms/reviews/hr/reviewers', { signal })).data
+  },
+  async getHrReview(appraisalId, signal) {
+    return (await apiClient.get(`/pms/reviews/hr/${appraisalId}`, { signal })).data
+  },
+  async saveHrReview(appraisalId, payload) {
+    return (await apiClient.put(`/pms/reviews/hr/${appraisalId}/draft`, payload)).data
+  },
+  async submitHrReview(appraisalId) {
+    return (await apiClient.post(`/pms/reviews/hr/${appraisalId}/submit`)).data
+  },
+  async reassignHrReview(appraisalId, reviewerId) {
+    return (await apiClient.post(`/pms/reviews/hr/${appraisalId}/reassign`, { reviewerId })).data
+  },
+  async remindHrReview(appraisalId) {
+    return (await apiClient.post(`/pms/reviews/hr/${appraisalId}/remind`)).data
+  },
+  async reviewHistory(appraisalId, signal) {
+    return (await apiClient.get(`/pms/reviews/${appraisalId}/history`, { signal })).data
+  },
+  async exportReviews(type, params) {
+    const response = await apiClient.get(`/pms/reviews/${type}/export`, { params, responseType: 'blob' })
+    blobDownload(response, `${type.toLowerCase()}-review-report.csv`)
+  },
   async departments(signal) {
     return (await apiClient.get('/departments', { signal })).data
   },

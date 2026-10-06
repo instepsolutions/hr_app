@@ -40,7 +40,11 @@ const routeNames = {
   feedback: 'Feedback & Comments',
   timeline: 'Appraisal Timeline',
   'manager-review': 'Manager Review',
+  'hr-review': 'HR Review',
+  'appraisal-summary': 'Appraisal Summary',
   'pip-management': 'PIP Management',
+  'promotions-increments': 'Promotion & Increment',
+  'reports-analytics': 'Reports & Analytics',
 }
 
 export default function Breadcrumb() {
