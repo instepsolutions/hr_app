@@ -198,6 +198,59 @@ export const pmsService = {
     const response = await apiClient.get(`/pms/reviews/${type}/export`, { params, responseType: 'blob' })
     blobDownload(response, `${type.toLowerCase()}-review-report.csv`)
   },
+  async appraisalSummaryOverview(params, signal) {
+    return (await apiClient.get('/pms/appraisals/summary/overview', { params, signal })).data
+  },
+  async appraisalSummaryList(params, signal) {
+    return (await apiClient.get('/pms/appraisals/summary', { params, signal })).data
+  },
+  async appraisalSummaryDetail(appraisalId, signal) {
+    return (await apiClient.get(`/pms/appraisals/summary/${appraisalId}`, { signal })).data
+  },
+  async exportAppraisalSummary(params) {
+    const response = await apiClient.get('/pms/appraisals/summary/export', { params, responseType: 'blob' })
+    blobDownload(response, 'appraisal-summary-report.csv')
+  },
+  async pipOverview(params, signal) {
+    return (await apiClient.get('/pms/pips/overview', { params, signal })).data
+  },
+  async pipList(params, signal) {
+    return (await apiClient.get('/pms/pips', { params, signal })).data
+  },
+  async pipDetail(pipId, signal) {
+    return (await apiClient.get(`/pms/pips/${pipId}`, { signal })).data
+  },
+  async pipTemplates(signal) {
+    return (await apiClient.get('/pms/pips/templates', { signal })).data
+  },
+  async createPip(payload) {
+    return (await apiClient.post('/pms/pips', payload)).data
+  },
+  async updatePip(pipId, payload) {
+    return (await apiClient.put(`/pms/pips/${pipId}`, payload)).data
+  },
+  async startPip(pipId) {
+    return (await apiClient.post(`/pms/pips/${pipId}/start`)).data
+  },
+  async addPipReview(pipId, payload) {
+    return (await apiClient.post(`/pms/pips/${pipId}/reviews`, payload)).data
+  },
+  async extendPip(pipId, payload) {
+    return (await apiClient.post(`/pms/pips/${pipId}/extend`, payload)).data
+  },
+  async closePip(pipId, payload) {
+    return (await apiClient.post(`/pms/pips/${pipId}/close`, payload)).data
+  },
+  async cancelPip(pipId, reason) {
+    return (await apiClient.post(`/pms/pips/${pipId}/cancel`, { reason })).data
+  },
+  async remindPip(pipId) {
+    return (await apiClient.post(`/pms/pips/${pipId}/remind`)).data
+  },
+  async exportPips(params) {
+    const response = await apiClient.get('/pms/pips/export', { params, responseType: 'blob' })
+    blobDownload(response, 'pip-report.csv')
+  },
   async departments(signal) {
     return (await apiClient.get('/departments', { signal })).data
   },

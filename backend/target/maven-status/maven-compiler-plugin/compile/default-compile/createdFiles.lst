@@ -7,6 +7,7 @@ com\hrms\dto\EmployeeProfileResponse.class
 com\hrms\dto\StatusUpdateRequest.class
 com\hrms\config\JwtAuthenticationFilter.class
 com\hrms\controller\BulkActionController.class
+com\hrms\pms\PipManagementService$PipRow.class
 com\hrms\repository\EmployeeStatusHistoryRepository.class
 com\hrms\pms\PmsWorkspaceDtos$KraRow.class
 com\hrms\service\JwtService.class
@@ -21,7 +22,9 @@ com\hrms\controller\DashboardController.class
 com\hrms\pms\PmsWorkspaceDtos$DepartmentMapping.class
 com\hrms\dto\ApiResponse.class
 com\hrms\HrmsApplication.class
+com\hrms\pms\PipManagementService.class
 com\hrms\dto\EmployeeProfileRequest.class
+com\hrms\pms\PmsCaseController.class
 com\hrms\pms\PmsWorkspaceDtos$IdMappingRequest.class
 com\hrms\pms\PmsWorkspaceService.class
 com\hrms\entity\Department.class
@@ -51,6 +54,7 @@ com\hrms\service\EmployeeMapper.class
 com\hrms\pms\PmsWorkspaceDtos$KraRequest.class
 com\hrms\entity\BulkActionEmployee.class
 com\hrms\repository\AppUserRepository.class
+com\hrms\pms\AppraisalSummaryService.class
 com\hrms\repository\EmployeeRepository.class
 com\hrms\pms\PmsWorkspaceDtos.class
 com\hrms\repository\BulkActionEmployeeRepository.class

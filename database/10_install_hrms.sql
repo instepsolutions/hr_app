@@ -18,5 +18,7 @@ SET DEFINE OFF
 @database/16_seed_pms_data.sql
 @database/18_create_pms_workspace.sql
 @database/19_create_pms_reviews.sql
+@database/20_create_pms_case_workflows.sql
+@database/21_link_pip_objectives.sql
 
 EXIT SUCCESS

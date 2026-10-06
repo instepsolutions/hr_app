@@ -22,6 +22,7 @@ const pmsLinks = [
   { label: 'Self Appraisal', to: '/performance/self-appraisal', icon: ClipboardCheck },
   { label: 'Manager Review', to: '/performance/manager-review', icon: UsersRound },
   { label: 'HR Review', to: '/performance/hr-review', icon: ShieldCheck },
+  { label: 'Appraisal Summary', to: '/performance/appraisal-summary', icon: FileText },
   { label: 'PIP Management', to: '/performance/pip-management', icon: ShieldCheck },
 ]
 
